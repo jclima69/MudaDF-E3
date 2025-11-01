@@ -1,0 +1,1135 @@
+/* ========================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ========================================
+       PALETA DE CORES (8 cores)
+       ======================================== */
+    --color-primary: #2c5f2d;
+    --color-secondary: #97bc62;
+    --color-accent: #ff8c42;
+    --color-info: #17a2b8;
+    --color-warning: #ffc107;
+    --color-danger: #dc3545;
+    --color-light: #f8f9fa;
+    --color-dark: #343a40;
+
+    /* ========================================
+       TIPOGRAFIA HIERÁRQUICA (5 tamanhos)
+       ======================================== */
+    --font-size-xxl: 2.5rem;  /* Títulos principais */
+    --font-size-xl: 2rem;     /* Subtítulos */
+    --font-size-lg: 1.5rem;   /* Cabeçalhos médios */
+    --font-size-md: 1rem;     /* Texto padrão */
+    --font-size-sm: 0.875rem; /* Observações / Rodapé */
+
+    /* ========================================
+       SISTEMA DE ESPAÇAMENTO MODULAR
+       ======================================== */
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-5: 48px;
+    --space-6: 64px;
+
+    /* ========================================
+       CORES JÁ EXISTENTES (mantidas)
+       ======================================== */
+    --primary-color: #2c5f2d;
+    --secondary-color: #97bc62;
+    --accent-color: #ff8c42;
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --border-color: #ddd;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ========================================
+   HEADER E NAVEGAÇÃO
+   ======================================== */
+header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.logo img {
+    display: block;
+    max-width: 150px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 0.5rem 1rem;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    position: relative;
+    transition: 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    transition: 0.3s;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    bottom: -8px;
+}
+
+/* ========================================
+   BOTÕES
+   ======================================== */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #1e4620;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: #7a9a4d;
+    transform: translateY(-2px);
+}
+
+.btn-copy {
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+.btn-copy:hover {
+    background-color: #e67a30;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ========================================
+   PAGE HEADER
+   ======================================== */
+.page-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   ABOUT SECTION
+   ======================================== */
+.about {
+    padding: 4rem 0;
+    background-color: var(--bg-light);
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.about-grid article {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.about-grid h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.about-grid ul {
+    list-style-position: inside;
+}
+
+.about-grid li {
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================
+   HISTORY SECTION
+   ======================================== */
+.history {
+    padding: 4rem 0;
+}
+
+.history h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: var(--secondary-color);
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    position: relative;
+    width: calc(50% - 40px);
+}
+
+.timeline-item:nth-child(odd) {
+    margin-left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: calc(50% + 40px);
+}
+
+.timeline-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================
+   TEAM SECTION
+   ======================================== */
+.team {
+    padding: 4rem 0;
+    background-color: var(--bg-light);
+}
+
+.team h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.team-member h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.team-member .role {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================
+   CONTACT SECTION
+   ======================================== */
+.contact {
+    padding: 4rem 0;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.contact-info {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.contact-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-info address {
+    font-style: normal;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.social-links h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.social-links ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.contact-map img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ========================================
+   PROJECTS PAGE
+   ======================================== */
+.projects {
+    padding: 4rem 0;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.project-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.category,
+.location {
+    background-color: var(--bg-light);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.project-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat strong {
+    display: block;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.stat span {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* ========================================
+   VOLUNTEERING SECTION
+   ======================================== */
+.volunteering {
+    padding: 4rem 0;
+    background-color: var(--bg-light);
+}
+
+.volunteering h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.volunteering-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.volunteering-info {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.volunteering-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.benefits,
+.opportunities {
+    margin-top: 2rem;
+}
+
+.benefits h4,
+.opportunities h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.benefits ul {
+    list-style-position: inside;
+}
+
+.benefits li {
+    margin-bottom: 0.5rem;
+}
+
+.opportunity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.opportunity {
+    background-color: var(--bg-light);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.opportunity h5 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.time-commitment {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.volunteering-cta {
+    display: flex;
+    align-items: center;
+}
+
+.cta-card {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cta-card h3 {
+    margin-bottom: 1rem;
+}
+
+.cta-card p {
+    margin-bottom: 1.5rem;
+}
+
+/* ========================================
+   DONATIONS SECTION
+   ======================================== */
+.donations {
+    padding: 4rem 0;
+}
+
+.donations h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.donation-methods h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.method-card {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.method-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.pix-info,
+.bank-info {
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.pix-info code {
+    background-color: var(--bg-light);
+    padding: 0.5rem;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 0.5rem 0;
+}
+
+.impact {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.impact h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.impact-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.impact-stat {
+    text-align: center;
+}
+
+.impact-stat strong {
+    display: block;
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================
+   MODAL
+   ======================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+.modal-close:hover {
+    color: var(--text-dark);
+}
+
+.modal h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* ========================================
+   REGISTRATION PAGE
+   ======================================== */
+.registration {
+    padding: 4rem 0;
+}
+
+.registration-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+}
+
+.registration-info h2 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.benefit {
+    background-color: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.benefit h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.benefit ul {
+    list-style-position: inside;
+}
+
+.benefit li {
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================
+   FORMS
+   ======================================== */
+.registration-form-container,
+.donation-form {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+fieldset {
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+legend {
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 0 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+output {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.footer-section a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================
+   DROPDOWN MENU (NOVO)
+   ======================================== */
+/* O item pai precisa de position: relative para ancorar o submenu */
+nav ul li {
+    position: relative; 
+}
+
+/* Estilos do Submenu (Dropdown) */
+nav ul ul {
+    display: none; /* Esconde por padrão */
+    position: absolute;
+    top: 100%; /* Posiciona abaixo do item pai */
+    left: 0;
+    min-width: 200px; /* Largura mínima do dropdown */
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    padding: 0.5rem 0;
+    z-index: 1001; /* Garante que fique acima do cabeçalho fixo */
+    flex-direction: column; /* Força os itens a serem verticais */
+}
+
+/* Visibilidade do Dropdown (Desktop) */
+nav ul li:hover > ul {
+    display: flex; /* Mostra o submenu no hover */
+}
+
+/* Estilos dos links e itens internos do submenu */
+nav ul ul li {
+    padding: 0; /* Remove padding extra do item principal */
+    /* Garante que o item seja vertical mesmo se o UL pai for flex */
+    width: 100%; 
+}
+
+nav ul ul a {
+    padding: 0.75rem 1.5rem; 
+    display: block;
+    white-space: nowrap; /* Evita quebra de linha em títulos longos */
+    color: var(--text-dark); /* Cor de texto padrão */
+}
+
+nav ul ul a:hover {
+    background-color: var(--bg-light); /* Destaque no hover */
+    color: var(--primary-color);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        box-shadow: var(--shadow);
+        padding: 1rem;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .about-grid,
+    .team-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
+    }
+
+    .volunteering-content {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .method-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-stats {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+/* Submenu em Mobile:
+       - Retorna para position: static para fluir dentro da lista vertical.
+       - Usa uma cor de fundo clara para se distinguir do menu principal.
+       - A visibilidade será controlada por uma classe (ex: .dropdown-active) via JavaScript,
+         pois o evento :hover não funciona bem em touch. */
+    nav ul ul {
+        position: static;
+        box-shadow: none;
+        background-color: var(--bg-light); /* Fundo diferente para distinguir */
+        min-width: 100%;
+        border-radius: 0;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Classe de ativação (usada pelo JavaScript) */
+    nav ul li.dropdown-active > ul {
+        display: flex; 
+    }
+
+}
