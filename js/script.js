@@ -208,7 +208,7 @@ class FormValidator {
             'cpf': {
                 'required': 'CPF é obrigatório',
                 'invalid': 'Digite um CPF válido (11 dígitos)',
-                'format': 'Formato inválido (use: 000.000.000-00)'
+                'format': 'Formato inválido'
             },
             'telefone': {
                 'required': 'Telefone é obrigatório',

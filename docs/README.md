@@ -6,12 +6,12 @@ Desenvolver uma plataforma web completa que permita às ONGs gerenciar projetos,
 ## 🚀 Tecnologias
 - HTML5 semântico  
 - CSS3 responsivo  
-- JavaScript básico (máscaras em tempo real)  
+- JavaScript (máscaras e validações)  
 - GitHub Pages
 
 ## 📂 Estrutura
 ```
-MudaDF-E2/
+MudaDF-E3/
 ├── index.html
 ├── projetos.html
 ├── cadastro.html
@@ -32,7 +32,7 @@ MudaDF-E2/
 3. Navegue pelas páginas do site.
 
 ## 🌐 Publicação no GitHub Pages
-https://jclima69.github.io/MudaDF-E2/
+https://jclima69.github.io/MudaDF-E3/
 
 ## 📧 Contato
 Projeto desenvolvido por Jaime Lima.
